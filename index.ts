@@ -6,7 +6,8 @@ const Max = readline.prompt();
 
 //Just going through the rules
 for (var i=1; i < (parseInt(Max)+1); i++){
-    if (i % 105 == 0) console.log("FizzBuzzBang");
+    if (i % 11 == 0) console.log("Bong");
+    else if (i % 105 == 0) console.log("FizzBuzzBang");
     else if (i % 15 == 0) console.log("FizzBuzz");
     else if (i % 21 == 0) console.log("FizzBang");
     else if (i % 35 == 0) console.log("BuzzBang");
