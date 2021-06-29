@@ -2,17 +2,25 @@ const readline = require('readline-sync');
 
 //Max number for when more than 100 are required
 console.log('\nEnter the maximum number:');
-const Max = readline.prompt();
+const Max = parseInt(readline.prompt());
 
-//Just going through the rules
-for (var i=1; i < (parseInt(Max)+1); i++){
-    if (i % 11 == 0) console.log("Bong");
-    else if (i % 105 == 0) console.log("FizzBuzzBang");
-    else if (i % 15 == 0) console.log("FizzBuzz");
-    else if (i % 21 == 0) console.log("FizzBang");
-    else if (i % 35 == 0) console.log("BuzzBang");
-    else if (i % 3 == 0) console.log("Fizz");
-    else if (i % 5 == 0) console.log("Buzz");
-    else if (i % 7 == 0) console.log("Bang");
-    else console.log(i);
+
+for (var i=1; i < (Max+1); i++){
+let wordList = [];
+if (i % 3 == 0) wordList.push("Fizz");
+if (i % 13 == 0) wordList.push("Fezz");
+if (i % 5 == 0) wordList.push("Buzz");
+if (i % 7 == 0) wordList.push("Bang");
+if (i % 17 != 0) 
+    if (i % 11 == 0)
+        if (i % 13 == 0) console.log("FezzBong");
+        else console.log("Bong");
+    else if (wordList.length==0) console.log(i);
+    else console.log(wordList.join(''));
+else if (i % 11 == 0)
+    if (i % 13 == 0) console.log("BongFezz ");
+    else console.log("Bong");
+else if (wordList.length==0) console.log(i);
+else console.log((wordList.reverse()).join(''));
 }
+
