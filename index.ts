@@ -1,8 +1,10 @@
 const readline = require('readline-sync');
 
+//Max number for when more than 100 are required
 console.log('\nEnter the maximum number:');
 const Max = readline.prompt();
 
+//Just going through the rules
 for (var i=1; i < (parseInt(Max)+1); i++){
     if (i % 105 == 0) console.log("FizzBuzzBang");
     else if (i % 15 == 0) console.log("FizzBuzz");
